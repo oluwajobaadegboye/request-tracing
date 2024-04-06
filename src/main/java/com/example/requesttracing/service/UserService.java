@@ -15,7 +15,7 @@ public class UserService {
     private WebClient webClient;
 
     public Mono<ResponseEntity<String>> fetDummyUsersOnline() { //TODO: use a more specific class as against String (e.g. User)
-        log.info("UserServing fetDummyUsersOnline");
+        log.info("UserService fetDummyUsersOnline");
         return webClient.get()
                 .uri("/users?limit=5")
                 .exchange()

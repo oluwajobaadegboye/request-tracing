@@ -1,0 +1,18 @@
+server:
+  port: 8080
+management:
+  tracing:
+    propagation:
+      type: b3
+    sampling:
+      probability: 1.0
+spring:
+  application.name: request-tracing
+
+management.tracing.sampling.probability: 1.0
+
+logging:
+  level:
+    web: INFO
+    org.springframework.web: INFO
+  pattern.level: "%5p [${spring.application.name:},traceId=%X{traceId}, spanId=%X{spanId}]"
